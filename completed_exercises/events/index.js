@@ -5,9 +5,8 @@
 
 class Events {
   constructor() {
-    this.events = {};
+    this.events = {}
   }
-  
   // Register an event handler
   on(eventName, callback) {
     if (this.events[eventName]) {
@@ -34,4 +33,20 @@ class Events {
   }
 }
 
+
+const divEvents = new Events()
+
+divEvents.on('click', () => {
+  console.log('i have been clicked')
+}),
+divEvents.on('click', () => {
+  console.log('i have been clicked again')
+})
+divEvents.on('submit', () => {
+  console.log('i have been clicked again')
+})
+divEvents.trigger('click')
+console.log(divEvents.events)
+divEvents.off('click')
+console.log(divEvents.events)
 module.exports = Events;
