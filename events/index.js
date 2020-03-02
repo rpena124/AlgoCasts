@@ -49,4 +49,5 @@ divEvents.trigger('click')
 console.log(divEvents.events)
 divEvents.off('click')
 console.log(divEvents.events)
+
 module.exports = Events;

@@ -7,21 +7,20 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {
-  const res = str.toLowerCase();
-  return res.split('').every((char, i) => {
-    return char === res[res.length - i - 1];
-  });
-}
-console.log(palindrome('Racecar'))
-
-// module.exports = palindrome;
-
 // function palindrome(str) {
-//   const reversed = str
-//     .split('')
-//     .reverse()
-//     .join('');
-//
-//   return str === reversed;
+//   const res = str.toLowerCase();
+//   return res.split('').every((char, i) => {
+//     return char === res[res.length - i - 1];
+//   });
 // }
+//console.log(palindrome('Racecar'))
+function palindrome(str) {
+  const reversed = str
+    .split('')
+    .reverse()
+    .join('');
+
+  return str === reversed;
+}
+
+module.exports = palindrome;
