@@ -210,12 +210,16 @@ const checkInputLength = (input) => {
 
 ```javascript
 	// function that mutates
-	let ricMershonAge = 21
-	let scottDraperAge = 25
+	const ricMershon = {
+	age: 21
+	}
+	const scottDraper = {
+	age: 25
+	}
 	
-	const increaseAge = (personsAge) => {
-	  personsAge = personsAge + 1
-	  console.log (`Horray it's your ${personsAge} birthday`)
+	const increaseAge = (person) => {
+	  person.age += 1
+	  console.log (`Horray it's your ${person.age} birthday`)
 	}
 	
 ```
