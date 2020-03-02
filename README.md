@@ -74,7 +74,7 @@ first class citizens meaning they can be passed around like any other object.
 
 ## Setup
 
-In `student_examples` for today, make a file `functions.js`
+make a file `functions.js`
 
 Test that a console.log will appear in Terminal when you run the file.
 
