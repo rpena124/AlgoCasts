@@ -1,11 +1,5 @@
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" ></link>
-  <style>
-    pre, code {
-      white-space: pre-line;
-      min-width: 400px;
-    }
-  </style>
 </head>
 <body>
   <h1>Node Class API</h1>
@@ -310,66 +304,6 @@
             list.insertFirst('c');
             list.insertAt('Hi', 1)
             list.getAt(1); // returns node with data 'Hi'
-          </pre>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          forEach
-        </td>
-        <td>
-          (function)
-        </td>
-        <td>
-          -
-        </td>
-        <td>
-          Calls the provided function with every node of the chain and the index
-          of the node.
-        </td>
-        <td>
-          <pre>
-            const list = new List();
-
-            list.insertLast(1);
-            list.insertLast(2);
-            list.insertLast(3);
-            list.insertLast(4);
-
-            list.forEach((node, index) => {
-              node.data += 10;
-            });
-            list.getAt(0); // Returns node with data '11'
-          </pre>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          for...of Loop
-        </td>
-        <td>
-          -
-        </td>
-        <td>
-          -
-        </td>
-        <td>
-          Linked list should be compatible as the subject of a 'for...of' loop
-        </td>
-        <td>
-          <pre>
-            const list = new List();
-
-            list.insertLast(1);
-            list.insertLast(2);
-            list.insertLast(3);
-            list.insertLast(4);
-
-            for (let node of list) {
-              node.data += 10;
-            }
-
-            node.getAt(1); // returns node with data 11
           </pre>
         </td>
       </tr>
