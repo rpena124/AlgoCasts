@@ -1,3 +1,30 @@
+# LINKED LISTS
+
+## Lesson Objectives
+
+1. Explain what a Linked list is
+1. Demonstrate what a link does
+1. Give an example of a link list implementation can do
+
+
+## What is a Linked List?
+  1. A simple often used data structure that has 3 necessary properties
+  1. A head
+  1. A tail
+  1. A size or length property
+
+## Linked List Architecture
+  1. Linked List consist of element known as nodes
+  1. Each node points to the next node in the list if there is no next node it point to null
+  1. Nodes have one property known as value or data and contain some primitive value or object value
+
+
+
+![linked-list](https://media.git.generalassemb.ly/user/15881/files/c1409700-692a-11ea-98b9-15dab7ba6fff)
+
+
+
+
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" ></link>
 </head>
