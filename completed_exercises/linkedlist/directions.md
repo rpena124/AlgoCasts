@@ -1,11 +1,32 @@
+# LINKED LISTS
+
+## Lesson Objectives
+
+1. Explain what a Linked list is
+1. Demonstrate what a link does
+1. Give an example of a link list implementation can do
+
+
+## What is a Linked List?
+  1. A simple often used data structure that has 3 necessary properties
+  1. A head
+  1. A tail
+  1. A size or length property
+
+## Linked List Architecture
+  1. Linked List consist of element known as nodes
+  1. Each node points to the next node in the list if there is no next node it point to null
+  1. Nodes have one property known as value or data and contain some primitive value or object value
+
+
+
+![linked-list](https://media.git.generalassemb.ly/user/15881/files/c1409700-692a-11ea-98b9-15dab7ba6fff)
+
+
+
+
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" ></link>
-  <style>
-    pre, code {
-      white-space: pre-line;
-      min-width: 400px;
-    }
-  </style>
 </head>
 <body>
   <h1>Node Class API</h1>
@@ -313,66 +334,167 @@
           </pre>
         </td>
       </tr>
-      <tr>
-        <td>
-          forEach
-        </td>
-        <td>
-          (function)
-        </td>
-        <td>
-          -
-        </td>
-        <td>
-          Calls the provided function with every node of the chain and the index
-          of the node.
-        </td>
-        <td>
-          <pre>
-            const list = new List();
-
-            list.insertLast(1);
-            list.insertLast(2);
-            list.insertLast(3);
-            list.insertLast(4);
-
-            list.forEach((node, index) => {
-              node.data += 10;
-            });
-            list.getAt(0); // Returns node with data '11'
-          </pre>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          for...of Loop
-        </td>
-        <td>
-          -
-        </td>
-        <td>
-          -
-        </td>
-        <td>
-          Linked list should be compatible as the subject of a 'for...of' loop
-        </td>
-        <td>
-          <pre>
-            const list = new List();
-
-            list.insertLast(1);
-            list.insertLast(2);
-            list.insertLast(3);
-            list.insertLast(4);
-
-            for (let node of list) {
-              node.data += 10;
-            }
-
-            node.getAt(1); // returns node with data 11
-          </pre>
-        </td>
-      </tr>
     </tbody>
   </table>
 </body>
+
+
+``` javascript
+// Linked list
+
+class Node {
+  constructor(data, next = null) {
+    this.data = data;
+    this.next = next;
+  }
+}
+
+class LinkedList {
+  constructor() {
+    this.head = null;
+  }
+
+  insertFirst(data) {
+    this.head = new Node(data, this.head);
+  }
+
+  size() {
+    let counter = 0;
+    let node = this.head;
+
+    while (node) {
+      counter++;
+      node = node.next;
+    }
+
+    return counter;
+  }
+
+  getFirst() {
+    return this.head;
+  }
+
+  getLast() {
+    if (!this.head) {
+      return null;
+    }
+
+    let node = this.head;
+    while (node) {
+      if (!node.next) {
+        return node;
+      }
+      node = node.next;
+    }
+  }
+
+  clear() {
+    this.head = null;
+  }
+
+  removeFirst() {
+    if (!this.head) {
+      return;
+    }
+
+    this.head = this.head.next;
+  }
+
+  removeLast() {
+    if (!this.head) {
+      return;
+    }
+
+    if (!this.head.next) {
+      this.head = null;
+      return;
+    }
+
+    let previous = this.head;
+    let node = this.head.next;
+    while (node.next) {
+      previous = node;
+      node = node.next;
+    }
+    previous.next = null;
+  }
+
+  insertLast(data) {
+    const last = this.getLast();
+
+    if (last) {
+      // There are some existing nodes in our chain
+      last.next = new Node(data);
+    } else {
+      // The chain is empty!
+      this.head = new Node(data);
+    }
+  }
+
+  getAt(index) {
+    let counter = 0;
+    let node = this.head;
+    while (node) {
+      if (counter === index) {
+        return node;
+      }
+
+      counter++;
+      node = node.next;
+    }
+    return null;
+  }
+
+  removeAt(index) {
+    if (!this.head) {
+      return;
+    }
+
+    if (index === 0) {
+      this.head = this.head.next;
+      return;
+    }
+
+    const previous = this.getAt(index - 1);
+    if (!previous || !previous.next) {
+      return;
+    }
+    previous.next = previous.next.next;
+  }
+
+  insertAt(data, index) {
+    if (!this.head) {
+      this.head = new Node(data);
+      return;
+    }
+
+    if (index === 0) {
+      this.head = new Node(data, this.head);
+      return;
+    }
+
+    const previous = this.getAt(index - 1) || this.getLast();
+    const node = new Node(data, previous.next);
+    previous.next = node;
+  }
+ // If your hungry for more
+  forEach(fn) {
+    let node = this.head;
+    let counter = 0;
+    while (node) {
+      fn(node, counter);
+      node = node.next;
+      counter++;
+    }
+  }
+// If your absolutely starving
+  *[Symbol.iterator]() {
+    let node = this.head;
+    while (node) {
+      yield node;
+      node = node.next;
+    }
+  }
+}
+
+```
