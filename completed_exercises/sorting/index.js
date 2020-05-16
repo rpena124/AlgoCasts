@@ -17,6 +17,21 @@ function bubbleSort(arr) {
   return arr;
 }
 
+function insertionSort(arr){
+  for(let i = 1; i < arr.length; i++){
+    let currentNum = arr[i]
+    let j = i - 1
+    while(currentNum < arr[j]){
+      const checkValue = arr[j];
+      arr[j] = currentNum;
+      arr[j + 1] = checkValue;
+      j--;
+    }
+  }
+  return arr
+}
+
+
 function selectionSort(arr) {
   for (let i = 0; i < arr.length; i++) {
     let indexOfMin = i;
@@ -63,4 +78,4 @@ function merge(left, right) {
   return [...results, ...left, ...right];
 }
 
-module.exports = { bubbleSort, selectionSort, mergeSort, merge };
+module.exports = { bubbleSort, selectionSort, mergeSort, merge, insertionSort};

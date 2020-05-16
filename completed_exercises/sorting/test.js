@@ -2,6 +2,7 @@ const S = require('./index');
 const bubbleSort = S.bubbleSort;
 const selectionSort = S.selectionSort;
 const mergeSort = S.mergeSort;
+const insertionSort = S.insertionSort;
 const merge = S.merge;
 
 function getArray() {
@@ -15,6 +16,12 @@ function getSortedArray() {
 describe('Bubble sort', () => {
   test('sorts an array', () => {
     expect(bubbleSort(getArray())).toEqual(getSortedArray());
+  });
+});
+
+describe('insertion Sort', ()=> {
+  test('sorts an array', ()=> {
+    expect(insertionSort(getArray())).toEqual(getSortedArray());
   });
 });
 
