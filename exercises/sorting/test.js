@@ -1,15 +1,18 @@
 const S = require('./index');
 const bubbleSort = S.bubbleSort;
 const selectionSort = S.selectionSort;
+const insertionSort = S.insertionSort;
 const mergeSort = S.mergeSort;
 const merge = S.merge;
 
 function getArray() {
-  return [100, -40, 500, -124, 0, 21, 7];
+  //return [100, -40, 500, -124, 0, 21, 7];
+  return [345, 4, 3, 6, 77, 0]
 }
 
 function getSortedArray() {
-  return [-124, -40, 0, 7, 21, 100, 500];
+  //return [-124, -40, 0, 7, 21, 100, 500];
+  return [0, 3, 4, 6, 77, 345]
 }
 
 describe('Bubble sort', () => {
@@ -18,21 +21,27 @@ describe('Bubble sort', () => {
   });
 });
 
-describe('Selection sort', () => {
-  test('sorts an array', () => {
-    expect(selectionSort(getArray())).toEqual(getSortedArray());
+describe('insertion Sort', ()=> {
+  test('sorts an array', ()=> {
+    expect(insertionSort(getArray())).toEqual(getSortedArray());
   });
 });
 
-describe('Merge sort', () => {
-  test('merge function can join together two sorted arrays', () => {
-    const left = [1, 10];
-    const right = [2, 8, 12];
-
-    expect(merge(left, right)).toEqual([1,2,8,10,12]);
-  });
-  
-  test('sorts an array', () => {
-    expect(mergeSort(getArray())).toEqual(getSortedArray());
-  });
-});
+// describe('Selection sort', () => {
+//   test('sorts an array', () => {
+//     expect(selectionSort(getArray())).toEqual(getSortedArray());
+//   });
+// });
+//
+// describe('Merge sort', () => {
+//   test('merge function can join together two sorted arrays', () => {
+//     const left = [1, 10];
+//     const right = [2, 8, 12];
+//
+//     expect(merge(left, right)).toEqual([1,2,8,10,12]);
+//   });
+//
+//   test('sorts an array', () => {
+//     expect(mergeSort(getArray())).toEqual(getSortedArray());
+//   });
+// });
