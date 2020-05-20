@@ -3,6 +3,7 @@ const bubbleSort = S.bubbleSort;
 const selectionSort = S.selectionSort;
 const mergeSort = S.mergeSort;
 const insertionSort = S.insertionSort;
+const quickSort = S.quickSort;
 const merge = S.merge;
 
 function getArray() {
@@ -41,5 +42,11 @@ describe('Merge sort', () => {
 
   test('sorts an array', () => {
     expect(mergeSort(getArray())).toEqual(getSortedArray());
+  });
+
+  describe('Quick sort', () => {
+    test('sorts an array', () => {
+      expect(quickSort(getArray())).toEqual(getSortedArray());
+    });
   });
 });
