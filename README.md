@@ -1,5 +1,16 @@
 # Interview Bank ( contains info from my interviews, interview courses from Grider, Steele, Traversy and others)
 
+# BTW to run tests
+```
+npm i
+npm run test exercises/nameoffolder
+```
+## note if you are in the exercises folder omit exercises and 
+```
+npm run test nameoffolder
+```
+i.e. `npm run test reverseint or npm run test exercises/reverseint`
+
 ## Concepts You Should Know How to describe ( Google and Stack Overflow)
 1. JavaScript Data Types
 1. Difference Between Const Let and Var
