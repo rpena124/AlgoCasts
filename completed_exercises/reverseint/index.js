@@ -8,6 +8,8 @@
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
+// Hint Math.sign or -1 is a negative greater than 0 or less than 0
+
 function reverseInt(n) {
   const reversed = n
     .toString()

@@ -3,7 +3,10 @@
 // commonly used in the string.
 // --- Examples
 // maxChar("abcccccccd") === "c"
-// maxChar("apple 1231111") === "1"
+// maxChar("apple 1231111") === "1
+// Hint use an object as a frequency counter (google it)
+// {a: 1, b: 1, c: 7, d:1}
+// For of loops are for array, for in loops are for objects
 
 function maxChar(str) {
   const charMap = {};
