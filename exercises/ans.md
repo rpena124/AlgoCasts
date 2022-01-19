@@ -2,6 +2,7 @@ Solution for today
 
 Same 
 Naive
+```js
 function same(arr1, arr2){
     if(arr1.length !== arr2.length){
         return false;
@@ -15,7 +16,7 @@ function same(arr1, arr2){
     }
     return true
 }
-Good
+//Good
 function same(arr1, arr2){
     if(arr1.length !== arr2.length){
         return false;
@@ -39,7 +40,7 @@ function same(arr1, arr2){
     return true
 }
 
-maxChar
+//maxChar
 
 function maxChar(str) {
   const frequencyCounter = {};
@@ -63,3 +64,4 @@ function maxChar(str) {
 
   return maxChar;
 }
+```
